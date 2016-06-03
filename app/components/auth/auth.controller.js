@@ -1,10 +1,7 @@
-var async = require('async'),
-    request = require('request'),
-    jwt = require('jsonwebtoken'),
+var jwt = require('jsonwebtoken'),
     passport = require('passport');
 
 var settings = require('../../_global/config'),
-    generateHash = settings.generateHash,
     passportStrategies = settings.passportStrategies(passport);
 
 /**

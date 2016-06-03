@@ -29,9 +29,9 @@ db.on('open', function () {
 var server = app.listen(settings.config.getEnv().port, function () {
     var host = ip.address();
     var port = server.address().port;
-    console.log('Papirux server started at http://%s:%s', host, port);
+    console.log('Server started at http://%s:%s', host, port);
 
-    app.use(express.static('./www'));
+    // app.use(express.static('./www'));
     app.use(bodyParser.json());
     app.use(require('morgan')('dev'));
     app.use(passport.initialize());
