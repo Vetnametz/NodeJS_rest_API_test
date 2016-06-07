@@ -11,7 +11,11 @@ var userSchema = mongoose.Schema({
   },
   salt: {
     type: String
-  }
+  },
+  comments: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Comment'
+  }]
 });
 
 module.exports = mongoose.model('User', userSchema);

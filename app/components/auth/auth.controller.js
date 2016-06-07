@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken'),
     passport = require('passport');
 
 var settings = require('../../_global/config'),
+    Users = require('../../../app/_global/models/user.model'),
     passportStrategies = settings.passportStrategies(passport);
 
 /**
@@ -51,8 +52,17 @@ exports.signUp = function (req, res, next) {
 
 exports.logIn = function (req, res, next) {
     passport.authenticate('local-login', function (err, user, info) {
+        console.log(user);
         passportAuthLogic(err, res, req, next, user);
     })(req, res, next);
+};
+
+exports.deleteUser = function (req, res) {
+    Users
+      .findOne({email: req.query.email})
+      .remove(function(err, result){
+          res.json({message: 'Account was deleted successfully'})
+      });
 };
 
 

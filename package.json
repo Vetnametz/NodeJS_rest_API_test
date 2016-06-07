@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "sudo nodemon server",
-    "test": "make test"
+    "test": "mocha"
   },
   "dependencies": {
     "async": "^1.5.0",
@@ -22,9 +22,10 @@
     "request": "^2.67.0"
   },
   "devDependencies": {
-    "mocha": "1.7.0",
-    "should": "1.2.1",
-    "superagent": "1.7.2",
-    "supertest": "1.2.0"
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "should": "^9.0.0",
+    "superagent": "^2.0.0",
+    "supertest": "^1.2.0"
   }
 }

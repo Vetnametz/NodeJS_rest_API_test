@@ -9,6 +9,14 @@ var commentSchema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'Comment'
   },
+  rootComment: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Comment'
+  },
+  childComments: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Comment'
+  }],
   dateCreated: {
     type: Date,
     default: Date.now
@@ -17,6 +25,5 @@ var commentSchema = mongoose.Schema({
     type: String
   }
 });
-
 module.exports = mongoose.model('Comment', commentSchema);
 

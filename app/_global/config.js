@@ -1,10 +1,17 @@
 exports.config = {
     getEnv: function(){
         switch(process.env.NODE_ENV){
+            case 'test':
+                return {
+                    port: 8080,
+                    domain: "localhost",
+                    mongodb: "mongodb://localhost:27017/nodeTest"
+                    
+                };
             default:
                 return {
                     port: 8080,
-                    domain: "papirux.pascalium.com",
+                    domain: "localhost",
                     mongodb: "mongodb://localhost:27017/nodeTest"
                 };
         }
